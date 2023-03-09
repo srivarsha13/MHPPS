@@ -1,6 +1,6 @@
 # MHPPS
 ## Multi-Modal Human Personality Profiling System
-Predicts a user's personality from a combination of his/her tweets, a short audio interview and a video recording of his/her daily activities.
+Predicts a user's personality from a combination of his/her tweets, a short audio interview and a video recording.
 #
 The system consists of 3 modules - 
   1. Tweet Analysis Module : Employs a machine learning model to predict the extroversion of a user with the help of the MBTI model.
