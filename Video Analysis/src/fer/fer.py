@@ -49,8 +49,6 @@ log = logging.getLogger("fer")
 
 NumpyRects = Union[np.ndarray, Sequence[Tuple[int, int, int, int]]]
 
-__author__ = "Justin Shenk"
-
 PADDING = 40
 SERVER_URL = "http://localhost:8501/v1/models/emotion_model:predict"
 
