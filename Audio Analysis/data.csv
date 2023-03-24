@@ -53,14 +53,14 @@ file,total_duration,num_pauses,total_silence,personality
 52.wav,100.65,26,26.47,Not Confident
 53.wav,47.93,19,23.36,Not Confident
 54.wav,81.07,21,15.39,Confident
-55.wav,100.47,32,36.09,Not Confident
+55.wav,100.47,32,36.08,Not Confident
 56.wav,81.96,10,6.76,Confident
-57.wav,74.37,22,22.91,Not Confident
+57.wav,74.37,22,22.9,Not Confident
 58.wav,82.45,19,12.18,Confident
 59.wav,35.19,15,16.23,Not Confident
 60.wav,73.94,6,4.13,Confident
 61.wav,35.84,7,4.3,Confident
-62.wav,112.41,42,38.02,Not Confident
+62.wav,112.41,42,38.01,Not Confident
 63.wav,95.69,37,45.66,Not Confident
 64.wav,79.74,7,4.66,Confident
 65.wav,75.42,14,12.86,Confident
@@ -68,7 +68,7 @@ file,total_duration,num_pauses,total_silence,personality
 67.wav,65.43,0,0.0,Confident
 68.wav,73.5,9,6.02,Confident
 69.wav,112.51,32,57.56,Not Confident
-70.wav,74.58,16,19.96,Not Confident
+70.wav,74.58,16,19.95,Not Confident
 71.wav,35.35,10,10.76,Not Confident
 72.wav,84.42,1,0.5,Confident
 73.wav,34.82,12,12.98,Not Confident
@@ -78,28 +78,28 @@ file,total_duration,num_pauses,total_silence,personality
 77.wav,64.72,18,12.54,Confident
 78.wav,77.5,17,13.75,Confident
 79.wav,31.97,7,19.54,Not Confident
-80.wav,100.47,32,36.09,Not Confident
+80.wav,100.47,32,36.08,Not Confident
 81.wav,71.52,0,0.0,Confident
 82.wav,84.42,1,0.5,Confident
 83.wav,36.6,8,6.77,Confident
 84.wav,81.76,17,11.7,Confident
 85.wav,73.94,6,4.13,Confident
 86.wav,38.44,3,1.69,Confident
-87.wav,114.18,29,22.91,Not Confident
-88.wav,93.52,35,30.01,Not Confident
+87.wav,84.57,1,0.96,Confident
+88.wav,78.25,10,8.04,Confident
 89.wav,101.86,28,24.33,Not Confident
-90.wav,108.0,24,15.94,Confident
+90.wav,108.0,24,15.92,Confident
 91.wav,65.94,10,6.48,Confident
-92.wav,74.58,16,19.96,Not Confident
+92.wav,75.84,1,0.76,Confident
 93.wav,63.53,20,15.59,Not Confident
 94.wav,49.65,15,12.29,Not Confident
 95.wav,104.8,0,0.0,Confident
 96.wav,59.8,10,7.34,Confident
 97.wav,68.23,0,0.0,Confident
-98.wav,103.58,13,8.49,Confident
+98.wav,69.91,0,0.0,Confident
 99.wav,52.04,9,7.4,Confident
-100.wav,36.39,9,7.59,Not Confident
+100.wav,71.27,4,2.2,Confident
 101.wav,43.0,0,0.0,Confident
-102.wav,56.58,0,0.0,Confident
+102.wav,80.02,17,19.41,Not Confident
 103.wav,81.03,17,13.27,Confident
-104.wav,53.73,7,5.53,Confident
+104.wav,68.42,13,9.28,Confident
