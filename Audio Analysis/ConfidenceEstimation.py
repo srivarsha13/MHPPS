@@ -41,13 +41,14 @@ def get_conf_pred(audio_file):
     os.unlink(out_file)
 
     # Predict using SVM Classifier
-    svm_model = joblib.load('svm_model.sav')
+    svm_model = joblib.load('C:\\FinalYearProject\\AudioAnalysis\\svm_model.sav')
     pred = svm_model.predict(info)
     pred_acc = svm_model.predict_proba(info)
     
     return pred, pred_acc
 
-audio_file = input("Enter path to audio file : ")
-pred, pred_acc = get_conf_pred(audio_file)
+""" audio_file = input("Enter path to audio file : ")
+curr_path = "C:\\FinalYearProject\\AudioAnalysis\\"
+pred, pred_acc = get_conf_pred(curr_path+audio_file)
 print("Confidence Prediction : " + str(pred[0]))
-print("Prediction Accuracy : %.2f" % round(max(pred_acc[0])*100, 2) + " %")
+print("Prediction Accuracy : %.2f" % round(max(pred_acc[0])*100, 2) + " %") """

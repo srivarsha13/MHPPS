@@ -6,9 +6,10 @@ def init_matlab_eng():
     engine = matlab.engine.start_matlab()
     return engine
 
-def get_eye_dir(video_file):
+def get_dir(video_file):
+    curr_path = "C:\\FinalYearProject\\VideoAnalysis\\"
     engine = init_matlab_eng()
-    cam = cv2.VideoCapture(video_file)
+    cam = cv2.VideoCapture(curr_path+video_file)
     try :
 
         if not os.path.exists("output_edd"):
@@ -31,9 +32,9 @@ def get_eye_dir(video_file):
         if ret:
             if frame_cur > (step*frames_per_second):  
                 frame_cur = 0
-                name = 'output_edd/fr' + str(frames_captured+1) + '.jpg'
+                name = 'C:/FinalYearProject/VideoAnalysis/output_edd/fr' + str(frames_captured+1) + '.jpg'
                 # print(name)
-                cv2.imwrite(name, frame)
+                cv2.imwrite(curr_path+name, frame)
                 dir_arr+=[str(engine.get_eye_dir(name))]            
                 frames_captured+=1
                 if frames_captured>frame_count-1:
@@ -51,7 +52,11 @@ def get_eye_dir(video_file):
 
     return eye_dir, acc
 
-video_file = input("Enter path to video file : ")
-eye_dir, acc = get_eye_dir(video_file)
+""" video_file = input("Enter path to video file : ")
+curr_path = "C:\\FinalYearProject\\VideoAnalysis\\"
+eye_dir, acc = get_eye_dir(curr_path+video_file)
+aud_dir = input("Enter audience direction relative to speaker : ")
+if(str(eye_dir).casefold() == aud_dir.casefold()) :
+    print("Yes")
 print("Eye Direction : " + eye_dir.title())
-print("Prediction Accuracy : %.2f" % round(acc*100, 2) + " %")
+print("Prediction Accuracy : %.2f" % round(acc*100, 2) + " %") """

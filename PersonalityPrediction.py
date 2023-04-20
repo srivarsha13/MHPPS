@@ -1,7 +1,8 @@
 from TweetAnalysis.MBTIClassification import get_extro_pred
 from AudioAnalysis.ConfidenceEstimation import get_conf_pred
 from VideoAnalysis.FacialExpressionRecognition import get_face_expr
-from VideoAnalysis.EyeDirectionDetection import get_eye_dir
+from VideoAnalysis.EyeDirectionDetection import get_dir
+import matlab.engine
 
 intro_text = """You are often the center of attention - and you like it that way. You aren't afraid to 
 introduce yourselves to new people. You feel comfortable in large groups and rarely turn down
@@ -46,39 +47,42 @@ if extro_pred == "Extrovert" :
     pred_summary+=extro_text
 else :
     pred_summary+=intro_text
-print("Extroversion Prediction : " + extro_pred)
-print("Prediction Accuracy : %.2f" % round(extro_acc*100, 2) + " %")
-print()
+#print("Extroversion Prediction : " + extro_pred)
+#print("Prediction Accuracy : %.2f" % round(extro_acc*100, 2) + " %")
+#print()
 
+audio_path = "C:\\FinalYearProject\\AudioAnalysis\\"
 audio_file = input("Enter path to audio file : ")
-conf_pred, conf_acc = get_conf_pred(audio_file)
+conf_pred, conf_acc = get_conf_pred(audio_path+audio_file)
 if str(conf_pred[0])=="Confident" :
     pred_summary+=conf_text
 else :
     pred_summary+=nconf_text
-print("Confidence Prediction : " + str(conf_pred[0]))
-print("Prediction Accuracy : %.2f" % round(max(conf_acc[0])*100, 2) + " %")
-print()
+#print("Confidence Prediction : " + str(conf_pred[0]))
+#print("Prediction Accuracy : %.2f" % round(max(conf_acc[0])*100, 2) + " %")
+#print()
 
+video_path = "C:\\FinalYearProject\\VideoAnalysis\\"
 video_file = input("Enter path to video file : ")
-fer_pred, fer_acc = get_face_expr(video_file)
+fer_pred, fer_acc = get_face_expr(video_path+video_file)
 if(fer_pred=="happy" or fer_pred=="neutral") :
     pred_summary+=vers_text
 else :
     pred_summary+=nvers_text
-print("Facial Expression : "+ fer_pred.title())
-print("Prediction Accuracy : {:0.2f} %".format(fer_acc))
-print()
+#print("Facial Expression : "+ fer_pred.title())
+#print("Prediction Accuracy : {:0.2f} %".format(fer_acc))
+#print()
 
-edd_pred, edd_acc = get_eye_dir(video_file)
-if(edd_pred=="Straight") :
+edd_pred, edd_acc = get_dir(video_file)
+aud_dir = input("Enter audience direction relative to speaker : ")
+if(str(edd_pred).casefold() == aud_dir.casefold()) :
     pred_summary+=poise_text
 else :
     pred_summary+=npoise_text
-print("Eye Direction : " + edd_pred.title())
-print("Prediction Accuracy : %.2f" % round(edd_acc*100, 2) + " %")
-print()
+#print("Eye Direction : " + edd_pred.title())
+#print("Prediction Accuracy : %.2f" % round(edd_acc*100, 2) + " %")
+#print()
 
-soc_score = 0.15*extro_acc + 0.35*(0.4*edd_acc + 0.6*fer_pred) + 0.50*conf_acc
-print("Your Sociability Score : {:.2f} / 100\n\n".format(soc_score))
+soc_score = 0.15*float(extro_acc) + 0.35*(0.4*float(edd_acc) + 0.6*float(fer_acc)/100) + 0.50*float(max(conf_acc[0]))
+print("\n\nYour Sociability Score : %.2f / 100\n\n" % (soc_score*100))
 print(pred_summary)

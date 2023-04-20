@@ -3,6 +3,7 @@ from pandas import DataFrame
 import numpy as np
 import re
 import string
+import time
 import tweepy
 from tweepy import OAuthHandler
 from tweepy import API
@@ -120,9 +121,9 @@ def get_extro_pred(username):
     df = DataFrame(outtweets,columns=["id","created_at","favorite_count","retweet_count", "text"])
     df.to_csv('%s_tweets.csv' % username, index=False)
     
-    rnd_ieModel = joblib.load('rf_model.sav')
+    rnd_ieModel = joblib.load('C:\\FinalYearProject\\TweetAnalysis\\rf_model.sav')
     filename = username + "_tweets.csv"
-    df = pd.read_csv("C:\FinalYearProject\Tweet Analysis Module\\" + filename)
+    df = pd.read_csv("C:\FinalYearProject\TweetAnalysis\\" + filename)
     
     #Preprocessing tweets
     posts = df['text']
@@ -140,9 +141,9 @@ def get_extro_pred(username):
     rnd_ieModel.predict(x_tf)
     IEpred=[]
     for pred in predicted_ie:
-        if pred==1:
+        if pred==0:
             IEpred+=['I']
-        elif pred==0:
+        elif pred==1:
             IEpred+=['E']
     
     extro_pred = max(set(IEpred), key = IEpred.count)
@@ -154,8 +155,8 @@ def get_extro_pred(username):
 
     return extro_pred, pred_acc
 
-username = input("Enter username : ")
+""" username = input("Enter username : ")
 pred, acc = get_extro_pred(username)
 print("Extroversion Prediction : " + pred)
 print("Prediction Accuracy : %.2f" % round(acc*100, 2) + " %")
-print()
+print() """

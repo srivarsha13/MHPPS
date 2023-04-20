@@ -18,7 +18,8 @@ def get_face_expr(video_file):
 
     return expr, conf_level
 
-video_file = input("Enter path to video file : ")
-expr, conf_level = get_face_expr(video_file)
+""" video_file = input("Enter path to video file : ")
+curr_path = "C:\\FinalYearProject\\VideoAnalysis\\"
+expr, conf_level = get_face_expr(curr_path+video_file)
 print("Facial Expression : "+ expr.title())
-print("Confidence Level : {:0.2f} %".format(conf_level))
+print("Confidence Level : {:0.2f} %".format(conf_level)) """
